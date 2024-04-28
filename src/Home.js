@@ -6,11 +6,18 @@ import Footer from './Components/Footer.js';
 import Resume from './Components/Resume.js';
 import About from './Components/About.js';
 import Project from './Components/Project.js';
-
+import ContactUs from './Components/ContactUs.js';
 
 
 
 export default function Home() {
+const [cls,setcls]=useState(["flex"])
+window.onresize = function exampleFunction(){
+  if(window.innerWidth<490)
+  setcls("grid");
+  else
+    setcls("flex");
+  }
  
 const [pos, setClassList] = useState(["text1"]);
 setInterval(() => {
@@ -18,7 +25,7 @@ setInterval(() => {
   setClassList("text1");
   else
   setClassList("text2");
-}, 5000);
+}, 5500);
 
   return (
     
@@ -39,9 +46,15 @@ setInterval(() => {
        <About/>
       <Card/>
       <Project/>
-     <Resume/>
-     <Footer/> 
+      <div className="container" style={{display:cls}}>
+      <Resume/>
+        <ContactUs/>
+        
+      </div>
       
+      
+     <Footer/> 
+     
 
     </div>
     

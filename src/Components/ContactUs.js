@@ -25,31 +25,31 @@ export default function ContactUs() {
     };
 
   return (
-    <div id='Contact'>
-      <form ref={form} onSubmit={sendEmail}>
+    <div id='Contact' className='container' style={{display:'flex', marginBottom:10}}>
+      <form  ref={form} onSubmit={sendEmail}>
 
-        <div style={{margin:6,display:'flex' ,alignContent:'center'}}>
-          <label >Name</label>
-          <input style={{marginLeft:35}} type="text" name="user_name" />
-        </div>
+<div className='container' style={{display:'flex',alignContent:'center'}}>
+  <label ><strong><pre>Name    </pre></strong></label>
+  <input  type="text" name="user_name" />
+</div>
 
-        <div style={{margin:6,display:'flex',alignContent:'center'}}>
-          <label >Email</label>
-          <input style={{marginLeft:38}} type="email" name="user_email" />
-        </div>
+<div className='container' style={{display:'flex',alignContent:'center',marginTop:6}} >
+  <label ><strong><pre>Email   </pre></strong></label>
+  <input  type="email" name="user_email" />
+</div>
 
-        <div style={{margin:6,display:'flex',alignContent:'center'}}>
-            <label>Message</label>
-            <textarea style={{marginLeft:15}} name="message" />
-        </div>
-      
-        <div style={{marginTop:40,marginLeft:90,display:'flex',alignContent:'center'}}>
-          {/* <input  type="submit" value="Se" /> */}
-          
-              <button type="submit" value={"Send"} class="btn btn-success " >Success</button>
-          <div id='su'></div>
-        </div>
-    </form>
+<div className='container' style={{display:'flex',alignContent:'center',marginTop:6}}>
+    <label><strong><pre>Message </pre></strong></label>
+    <textarea  name="message" />
+</div>
+
+<div className='container' style={{alignItems:'end'}} >
+  {/* <input  type="submit" value="Se" /> */}
+  
+      <button style={{marginTop:8}} type="submit" value={"Send"} class="btn btn-success" >Success</button>
+  </div>
+
+</form>
     </div>
   )
 }
