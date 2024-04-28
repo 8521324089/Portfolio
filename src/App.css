@@ -36,3 +36,109 @@
     transform: rotate(360deg);
   }
 }
+.container1 {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+/* Bottom left text */
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+/* Top right text */
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+/* Bottom right text */
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+/* Centered text */
+.centered1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* * {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+} */
+
+/* body {
+  background: yellowgreen;
+} */
+
+.container2 {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.container span {
+  display: block;
+}
+
+.text1 {
+  color: white;
+  font-size: 70px;
+  font-weight: 700;
+  letter-spacing: 8px;
+  margin-bottom: 20px;
+  /* background: yellowgreen; */
+  position: relative;
+  animation: text 4s 1;
+}
+.text2 {
+  color: white;
+  font-size: 70px;
+  font-weight: 700;
+  letter-spacing: 8px;
+  margin-bottom: 20px;
+  /* background: yellowgreen; */
+  position: relative;
+ 
+}
+.text3 {
+  font-size: 30px;
+  /* color: darkgreen; */
+  font-family: Georgia, serif;
+}
+
+@keyframes text {
+  0% {
+      color: black;
+      margin-bottom: -40px;
+  }
+
+  30% {
+      letter-spacing: 25px;
+      margin-bottom: -40px;
+  }
+
+  85% {
+      letter-spacing: 8px;
+      margin-bottom: -40px;
+  }
+}
