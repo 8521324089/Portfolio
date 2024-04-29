@@ -1,20 +1,26 @@
 import React, { useState} from 'react'
 
 export default function Project() {
-  const [cls,setcls]=useState(["flex"])
-window.onresize = function exampleFunction(){
-  if(window.innerWidth<600)
-  setcls("grid");
-  else
-    setcls("flex");
-  }
+  // function myFunction(){
+  //   const a=document.getElementById('chan');
+  //   if(window.innerWidth<490)
+  //   {
+  //     a.style.display='grid';
+  //   }
+  //   else
+  //     {
+  //       a.style.display='flex';
+      
+  //     }
+  //   }
+  //   window.addEventListener("resize", myFunction);
   return (
     <div id='Project'  >
       <h2 style={{marginLeft:60}}>Project</h2>
-      <div className='container' style={{display:cls}} >
+      <div className='container chan' id='chan' >
       
 
-      <div className="card "  style={{display:cls,margin:20, alignContent:'center'}}>
+      <div className="card "  style={{display:'flex',margin:20, alignContent:'center'}}>
   <img src="a (1).png" className="card-img-top" alt="..."/>
   <div classNameName="card-body" style={{ padding:5,backgroundColor:'#E09392'}}>
     <h5 className="card-title">Weather app</h5>
@@ -22,7 +28,7 @@ window.onresize = function exampleFunction(){
     </div>
 </div>
 
-<div className="card"  style={{display:cls,margin:20,alignContent:'center'}}>
+<div className="card"  style={{display:'flex',margin:20,alignContent:'center'}}>
   <img src="a (8).png" className="card-img-top" alt="..."/>
   <div classNameName="card-body" style={{ padding:5,backgroundColor:'#E09392'}}>
     <h5 className="card-title">News app</h5>
@@ -30,7 +36,7 @@ window.onresize = function exampleFunction(){
     </div>
 </div>
 
-<div className="card"  style={{display:cls,margin:20,alignContent:'center',}}>
+<div className="card"  style={{display:'flex',margin:20,alignContent:'center',}}>
   <img src="a (3).png" className="card-img-top" alt="..."/>
   <div classNameName="card-body" style={{ padding:5,backgroundColor:'#E09392'}}>
     <h5 className="card-title">Stock Predication System</h5>

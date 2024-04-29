@@ -142,3 +142,28 @@
       margin-bottom: -40px;
   }
 }
+@media screen and (max-width: 803px) {
+  .chan {
+     /* width: 50%; */
+      display: grid;
+      #gk{
+        width:fit-content;
+      }
+  }
+}
+@media screen and (min-width: 804px) {
+  .chan {
+     /* width: 50%; */
+      display: flex;
+      align-content: space-between;
+  }
+  #gk{
+    width: 800px;
+    justify-content: space-between;
+  }
+  #gk1{
+    width:350px;
+    align-content: start;
+  }
+}
+

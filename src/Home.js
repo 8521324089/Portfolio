@@ -11,14 +11,19 @@ import ContactUs from './Components/ContactUs.js';
 
 
 export default function Home() {
-const [cls,setcls]=useState(["flex"])
-window.onresize = function exampleFunction(){
-  if(window.innerWidth<490)
-  setcls("grid");
-  else
-    setcls("flex");
-  }
- 
+// function myFunction(){
+//   const a=document.getElementById('cha');
+//   if(window.innerWidth<490)
+//   {
+//     a.style.display='grid';
+//   }
+//   else
+//     {
+//       a.style.display='flex';
+    
+//     }
+//   }
+//   window.addEventListener("resize", myFunction);
 const [pos, setClassList] = useState(["text1"]);
 setInterval(() => {
   if(pos!=="text1")
@@ -46,8 +51,8 @@ setInterval(() => {
        <About/>
       <Card/>
       <Project/>
-      <div className="container" style={{display:cls}}>
-      <Resume/>
+      <div  className="container chan" >
+      < Resume/>
         <ContactUs/>
         
       </div>

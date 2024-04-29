@@ -25,20 +25,20 @@ export default function ContactUs() {
     };
 
   return (
-    <div id='Contact' className='container' style={{display:'flex', marginBottom:10}}>
+    <div id='Contact gk' className='container' style={{ marginBottom:10}}>
       <form  ref={form} onSubmit={sendEmail}>
 
-<div className='container' style={{display:'flex',alignContent:'center'}}>
+<div className='container chan' id='chan' >
   <label ><strong><pre>Name    </pre></strong></label>
   <input  type="text" name="user_name" />
 </div>
 
-<div className='container' style={{display:'flex',alignContent:'center',marginTop:6}} >
+<div className='container chan' id='chan' style={{marginTop:6}} >
   <label ><strong><pre>Email   </pre></strong></label>
   <input  type="email" name="user_email" />
 </div>
 
-<div className='container' style={{display:'flex',alignContent:'center',marginTop:6}}>
+<div className='container chan' id='chan' style={{marginTop:6}}>
     <label><strong><pre>Message </pre></strong></label>
     <textarea  name="message" />
 </div>
