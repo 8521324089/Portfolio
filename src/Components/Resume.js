@@ -21,7 +21,7 @@ export default function Resume() {
         <div className="card container" id='gk1'   >
           <img src="Screenshot (627).png"  class="card-img-top " alt="..."/>
             <div className="card-body">
-              <p class="card-text" ><a href="Vivek kumar.pdf" className="button"><i className="fa fa-download "></i>Download Resume</a></p>
+              <p class="card-text" ><a href="VivekKumar__CV.pdf" className="button"><i className="fa fa-download "></i>Download Resume</a></p>
               </div>
               </div>
               
