@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vivek Kumar - Software Engineer Resume</title>
+<style>
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
+    font-size: 10pt;
+    line-height: 1.4;
+    color: #222222;
+    background: #ffffff;
+  }
+
+  .page {
+    width: 210mm;
+    margin: 0 auto;
+    padding: 14mm 16mm 12mm 16mm;
+  }
+
+  /* HEADER */
+  .header {
+    text-align: center;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #333333;
+    margin-bottom: 8px;
+  }
+
+  .header h1 {
+    font-size: 20pt;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: 1px;
+    margin-bottom: 1px;
+  }
+
+  .header-subtitle {
+    font-size: 10.5pt;
+    color: #333333;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .header-contact {
+    font-size: 9pt;
+    color: #444444;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .header-contact span { white-space: nowrap; }
+  .header-contact .sep { color: #999999; }
+  .header-contact a { color: #222222; text-decoration: none; }
+
+  /* SECTIONS */
+  .section { margin-bottom: 7px; }
+
+  .section-title {
+    font-size: 10.5pt;
+    font-weight: 700;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-bottom: 1.5px solid #cccccc;
+    padding-bottom: 2px;
+    margin-bottom: 5px;
+  }
+
+  /* SUMMARY */
+  .summary p {
+    font-size: 9.5pt;
+    color: #333333;
+    line-height: 1.45;
+  }
+
+  /* EXPERIENCE */
+  .exp-item { margin-bottom: 7px; }
+
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1px;
+  }
+
+  .exp-title {
+    font-size: 10pt;
+    font-weight: 700;
+    color: #000000;
+  }
+
+  .exp-date {
+    font-size: 9pt;
+    color: #555555;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .exp-company {
+    font-size: 9.5pt;
+    color: #444444;
+    font-style: italic;
+    margin-bottom: 2px;
+  }
+
+  .exp-bullets {
+    list-style: none;
+    padding: 0;
+  }
+
+  .exp-bullets li {
+    font-size: 9.5pt;
+    color: #333333;
+    padding-left: 12px;
+    position: relative;
+    margin-bottom: 1.5px;
+    line-height: 1.4;
+  }
+
+  .exp-bullets li::before {
+    content: '•';
+    position: absolute;
+    left: 1px;
+    color: #333333;
+    font-weight: 700;
+  }
+
+  /* PROJECTS */
+  .proj-item { margin-bottom: 5px; }
+
+  .proj-header {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 1px;
+  }
+
+  .proj-name {
+    font-size: 10pt;
+    font-weight: 700;
+    color: #000000;
+  }
+
+  .proj-tech {
+    font-size: 8.5pt;
+    color: #555555;
+    font-weight: 500;
+  }
+
+  .proj-desc {
+    font-size: 9.5pt;
+    color: #333333;
+    padding-left: 12px;
+    position: relative;
+    line-height: 1.4;
+  }
+
+  .proj-desc::before {
+    content: '•';
+    position: absolute;
+    left: 1px;
+    color: #333333;
+    font-weight: 700;
+  }
+
+  /* SKILLS */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    row-gap: 3px;
+    column-gap: 8px;
+  }
+
+  .skill-label {
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: #000000;
+  }
+
+  .skill-value {
+    font-size: 9.5pt;
+    color: #333333;
+  }
+
+  /* EDUCATION */
+  .edu-item { margin-bottom: 4px; }
+
+  .edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .edu-degree {
+    font-size: 10pt;
+    font-weight: 700;
+    color: #000000;
+  }
+
+  .edu-date {
+    font-size: 9pt;
+    color: #555555;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .edu-school {
+    font-size: 9.5pt;
+    color: #444444;
+    font-style: italic;
+  }
+
+  /* CERTIFICATIONS */
+  .cert-item {
+    font-size: 9.5pt;
+    color: #333333;
+    padding-left: 12px;
+    position: relative;
+  }
+
+  .cert-item::before {
+    content: '•';
+    position: absolute;
+    left: 1px;
+    color: #333333;
+    font-weight: 700;
+  }
+
+  .cert-item strong { color: #000000; }
+
+  /* PRINT */
+  @media print {
+    html, body {
+      overflow: hidden;
+      height: 297mm;
+    }
+    .page {
+      width: 100%;
+      height: 297mm;
+      max-height: 297mm;
+      padding: 12mm 14mm 10mm 14mm;
+      overflow: hidden;
+      page-break-after: avoid;
+      page-break-inside: avoid;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>VIVEK KUMAR</h1>
+    <div class="header-subtitle">Software Engineer</div>
+    <div class="header-contact">
+      <span><a href="mailto:vk27092000@gmail.com">vk27092000@gmail.com</a></span>
+      <span class="sep">|</span>
+      <span>+91-8521324089</span>
+      <span class="sep">|</span>
+      <span>Noida, India</span>
+      <span class="sep">|</span>
+      <span><a href="https://linkedin.com/in/">LinkedIn</a></span>
+      <span class="sep">|</span>
+      <span><a href="https://github.com/">GitHub</a></span>
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="section summary">
+    <div class="section-title">Summary</div>
+    <p>
+      Detail-oriented Software Engineer currently working on a large-scale print automation
+      and workflow system. Experienced in backend development with Node.js, Python, and AWS,
+      along with strong foundations in Spring Boot and Microservices. Skilled in system debugging,
+      dependency analysis, legacy migration, and building scalable automation pipelines.
+      Committed to delivering reliable, maintainable solutions in Agile environments.
+    </p>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="section">
+    <div class="section-title">Experience</div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-title">Software Engineer</span>
+        <span class="exp-date">Aug 2025 – Present</span>
+      </div>
+      <div class="exp-company">MountBlue Tech (Client: Naviga) · Noida</div>
+      <ul class="exp-bullets">
+        <li>Working on a large-scale print automation and workflow system using Node.js, Python, and AWS (S3, SQS, EC2)</li>
+        <li>Modernized print automation by deprecating legacy configuration blocks while ensuring backward compatibility across different system triggers</li>
+        <li>Migrated from older engine setup to a unified flow-based architecture using a fallback strategy for smooth transition without breaking existing functionality</li>
+        <li>Performed deep dependency analysis across a large codebase to identify active vs unused components, tracing execution flows through backend services, queue systems, and automation pipelines</li>
+        <li>Improved and maintained an internal Python-based installer tool — implemented version tracking, post-installation cleanup, and optimized installation flow</li>
+        <li>Analyzed and replaced OS-dependent scripting logic with more scalable, cross-platform approaches</li>
+        <li>Conducted log analysis, troubleshot distributed workflows, and traced end-to-end execution from input triggers to final output generation</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-title">Web Developer (Intern)</span>
+        <span class="exp-date">Aug 2024 – Mar 2025</span>
+      </div>
+      <div class="exp-company">CodSoft · Virtual</div>
+      <ul class="exp-bullets">
+        <li>Designed and developed responsive web applications using the MERN stack (MongoDB, Express.js, React, Node.js)</li>
+        <li>Built reusable React components and integrated REST APIs for efficient frontend-backend communication</li>
+        <li>Collaborated with team members to deliver projects on time following Agile development practices</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section">
+    <div class="section-title">Projects</div>
+
+    <div class="proj-item">
+      <div class="proj-header">
+        <span class="proj-name">WellFound Clone</span>
+        <span class="proj-tech">Spring Boot, MVC, JWT, PostgreSQL, Cloudinary</span>
+      </div>
+      <div class="proj-desc">
+        Job platform with JWT authentication, role-based authorization, job search/filtering, profile management, email notifications, and Cloudinary-based resume storage
+      </div>
+    </div>
+
+    <div class="proj-item">
+      <div class="proj-header">
+        <span class="proj-name">SplitWise Clone</span>
+        <span class="proj-tech">Spring Boot, Factory Pattern, OAuth, PostgreSQL</span>
+      </div>
+      <div class="proj-desc">
+        Expense-sharing app using Factory Design Pattern for flexible expense types, with OAuth authentication and multi-currency group cost management
+      </div>
+    </div>
+
+    <div class="proj-item">
+      <div class="proj-header">
+        <span class="proj-name">College ERP Portal</span>
+        <span class="proj-tech">Spring Boot, Spring Security, MySQL</span>
+      </div>
+      <div class="proj-desc">
+        Role-based authentication and authorization system (admin, HOD, teacher, student) with granular access control to institutional resources
+      </div>
+    </div>
+  </div>
+
+  <!-- TECHNICAL SKILLS -->
+  <div class="section">
+    <div class="section-title">Technical Skills</div>
+    <div class="skills-grid">
+      <span class="skill-label">Languages</span>
+      <span class="skill-value">Java (Core & Advanced), Go, JavaScript, Python, SQL, HTML, CSS</span>
+
+      <span class="skill-label">Frameworks</span>
+      <span class="skill-value">Spring Boot, Hibernate, Microservices, React, Node.js, Express.js, Thymeleaf</span>
+
+      <span class="skill-label">Databases</span>
+      <span class="skill-value">PostgreSQL, MySQL, MongoDB</span>
+
+      <span class="skill-label">DevOps & Cloud</span>
+      <span class="skill-value">Docker, Git, GitHub, AWS (S3, SQS, EC2), Render, Railway</span>
+
+      <span class="skill-label">Concepts</span>
+      <span class="skill-value">REST APIs, JWT Auth, OAuth, Design Patterns, Agile/Scrum, DSA</span>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section">
+    <div class="section-title">Education</div>
+    <div class="edu-item">
+      <div class="edu-header">
+        <span class="edu-degree">B.Tech in Computer Science</span>
+        <span class="edu-date">Jul 2021 – Jun 2025</span>
+      </div>
+      <div class="edu-school">Bharat Institute of Technology and Engineering · Meerut, India</div>
+    </div>
+  </div>
+
+  <!-- CERTIFICATIONS -->
+  <div class="section">
+    <div class="section-title">Certifications</div>
+    <div class="cert-item"><strong>Blue Prism</strong> – Robotic Process Automation (RPA)</div>
+  </div>
+
+</div>
+</body>
+</html>
