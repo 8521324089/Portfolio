@@ -1,45 +1,50 @@
-import React from 'react'
-import ContactUs from './ContactUs'
+import React, { useState, useEffect } from 'react';
 
+const navItems = [
+  { label: 'About', href: '#about' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Resume', href: '#resume' },
+  { label: 'Contact', href: '#contact' },
+];
 
 export default function Navbar() {
-    const handleClick = () => {
-      window.scrollTo({top:0});
-    };
-    const handleClick1 = () => {
-      window.scrollTo(0, document.getElementById('About').offsetTop);
-    };
-    const handleClick2 = () => {
-      window.scrollTo(0, document.getElementById('Project').offsetTop);
-    };
-    const handleClick3 = () => {
-      window.scrollTo(0, document.getElementById('Contact').offsetTop);
-    };
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleNavClick = () => setMenuOpen(false);
 
   return (
-            <nav className="navbar navbar-expand-lg  bg-body-tertiary" style={{padding:0}} >
-    <div className="container-fluid border-subtle" style={{backgroundColor:"black"}}>
-      <button className="navbar-brand" onClick={handleClick} style={{color:"white",backgroundColor:'black',border:0}}  to="/">Home</button>
-      <button className="navbar-toggler" type="button" style={{padding:2}} data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="btn btn-secondary dropdown-toggle" style={{backgroundColor:'#6c757d17'}} ></span>
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} role="navigation" aria-label="Main navigation">
+      <a className="nav-logo" href="#hero" onClick={handleNavClick}>
+        {'<VK />'}
+      </a>
+
+      <button
+        className="nav-toggle"
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Toggle navigation menu"
+        aria-expanded={menuOpen}
+      >
+        <i className={`fa-solid ${menuOpen ? 'fa-xmark' : 'fa-bars'}`}></i>
       </button>
-      <div className="collapse navbar-collapse" id="navbarNav">
-        <ul className="navbar-nav">
-         
-          <li className="nav-item">
-            <button className="nav-link " onClick={handleClick1} style={{color:"white"}} href="/About">About</button>
+
+      <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
+        {navItems.map((item) => (
+          <li key={item.href}>
+            <a href={item.href} onClick={handleNavClick}>
+              {item.label}
+            </a>
           </li>
-          <li className="nav-item">
-            <button className="nav-link" onClick={handleClick2} style={{color:"white"}} href="/Project">Project</button>
-          </li>
-          <li className="nav-item">
-          <button className="nav-link" onClick={handleClick3} style={{color:"white"}} href='/ContactUs' >Contact</button>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-    
-    
-  )
+        ))}
+      </ul>
+    </nav>
+  );
 }

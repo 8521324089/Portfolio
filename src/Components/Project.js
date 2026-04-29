@@ -1,50 +1,76 @@
-import React, { useState} from 'react'
+import React from 'react';
+
+const projects = [
+  {
+    image: 'WellFound.png',
+    title: 'WellFound',
+    tech: ['Spring Boot', 'MVC', 'JWT', 'PostgreSQL', 'REST API'],
+    description:
+      'A Spring Boot MVC application featuring secure authentication, authorization, and job search. Includes applications management and profile management with role-based access control.',
+  },
+  {
+    image: 'Splitwise.png',
+    title: 'SplitWise',
+    tech: ['Spring Boot', 'Factory Pattern', 'PostgreSQL', 'REST API'],
+    description:
+      'An expense-sharing app built with Spring Boot, using the Factory Design Pattern to create flexible expense types and simplify group cost management across multiple users.',
+  },
+  {
+    image: 'College-erp-system.jpg',
+    title: 'College ERP Portal',
+    tech: ['Spring Boot', 'Spring Security', 'Role-Based Auth', 'MySQL'],
+    description:
+      'Implements user authentication and authorization, ensuring secure access to resources based on roles such as admin, HOD, teacher, and student with granular permission control.',
+  },
+  {
+    image: 'NewsApp.png',
+    title: 'News Aggregator',
+    tech: ['React', 'JavaScript', 'REST API', 'CSS'],
+    description:
+      'A React-powered news app that aggregates real-time articles from multiple sources. Features category filtering, responsive design, and seamless client-side routing.',
+  },
+  {
+    image: 'StockPredication.png',
+    title: 'Stock Prediction System',
+    tech: ['Python', 'Machine Learning', 'Pandas', 'Scikit-learn'],
+    description:
+      'A machine learning system that analyzes historical stock data to forecast price movements using data preprocessing, feature engineering, and model evaluation.',
+  },
+];
 
 export default function Project() {
-  // function myFunction(){
-  //   const a=document.getElementById('chan');
-  //   if(window.innerWidth<490)
-  //   {
-  //     a.style.display='grid';
-  //   }
-  //   else
-  //     {
-  //       a.style.display='flex';
-      
-  //     }
-  //   }
-  //   window.addEventListener("resize", myFunction);
   return (
-    <div id='Project'  >
-      <h2 style={{marginLeft:60}}>Project</h2>
-      <div className='container chan' id='chan' >
-      
+    <div className="section-alt">
+      <section className="section" id="projects">
+        <div className="section-header fade-in">
+          <p className="section-label">My Work</p>
+          <h2 className="section-title">Featured Projects</h2>
+          <div className="section-line"></div>
+        </div>
 
-      <div className="card "  style={{display:'flex',margin:20, alignContent:'center'}}>
-  <img src="a (1).png" className="card-img-top" alt="..."/>
-  <div classNameName="card-body" style={{ padding:5,backgroundColor:'#E09392'}}>
-    <h5 className="card-title">Weather app</h5>
-    <p className="card-text">A Java weather app fetches data from a weather API, parses JSON responses, and displays weather information through a GUI. It includes user input handling, error management, testing, and deployment for a comprehensive weather forecasting experience.</p>
+        <div className="projects-grid">
+          {projects.map((project, index) => (
+            <div className="project-card fade-in" key={index}>
+              <div className="project-image-wrapper">
+                <img
+                  src={`${process.env.PUBLIC_URL}/${project.image}`}
+                  alt={project.title}
+                  className="project-image"
+                />
+              </div>
+              <div className="project-info">
+                <div className="project-tech">
+                  {project.tech.map((t) => (
+                    <span key={t}>{t}</span>
+                  ))}
+                </div>
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
-</div>
-
-<div className="card"  style={{display:'flex',margin:20,alignContent:'center'}}>
-  <img src="a (8).png" className="card-img-top" alt="..."/>
-  <div classNameName="card-body" style={{ padding:5,backgroundColor:'#E09392'}}>
-    <h5 className="card-title">News app</h5>
-    <p className="card-text">A React-based news app aggregates and displays real-time news articles from various sources. It leverages React components for user interface design, integrates with news APIs for data retrieval, and employs routing for seamless navigation.</p>
-    </div>
-</div>
-
-<div className="card"  style={{display:'flex',margin:20,alignContent:'center',}}>
-  <img src="a (3).png" className="card-img-top" alt="..."/>
-  <div classNameName="card-body" style={{ padding:5,backgroundColor:'#E09392'}}>
-    <h5 className="card-title">Stock Predication System</h5>
-    <p className="card-text">A Python-based stock prediction system utilizes machine learning algorithms to analyze historical stock data, identifying patterns and trends to forecast future price movements. It employs features like data preprocessing, model training, and evaluation to enhance prediction accuracy.</p>
-    </div>
-</div>
-    </div>
-    
-    </div>
-  )
+  );
 }
